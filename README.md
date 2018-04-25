@@ -2,7 +2,7 @@
 
 Bursting particles effects for buttons. By Luis Manuel.
 
-![Image Title](link)
+![Particle Effects](https://tympanus.net/codrops/wp-content/uploads/2018/04/particleeffects_featured.jpg)
 
 [Article on Codrops](https://tympanus.net/codrops/?p=34685)
 
