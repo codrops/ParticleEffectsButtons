@@ -1,0 +1,45 @@
+.particles {
+	position: relative;
+	grid-area: 1 / 1 / 2 / 2;
+}
+
+.particles-canvas {
+	position: absolute;
+	pointer-events: none;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+}
+
+.particles-wrapper {
+	position: relative;
+	display: inline-block;
+    overflow: hidden;
+}
+
+.particles-button {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: relative;
+	border-radius: 5px;
+	border-radius: var(--radius-button);
+	background: var(--color-button-bg);
+	color: var(--color-button-text);
+	border: 0;
+	border: var(--border-button);
+	margin: 0;
+	padding: 1.5rem 3rem;
+	padding: var(--button-padding);
+}
+
+.particles-button:focus {
+	outline: none;
+}
+
+.no-js .particles-button {
+	grid-area: 1 / 1 / 2 / 2;
+}
