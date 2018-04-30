@@ -80,7 +80,7 @@
                     this.ctx.translate(p.startX, p.startY);
                     this.ctx.rotate(p.angle * Math.PI / 180);
                     this.ctx.globalAlpha = this.disintegrating ? 1 - p.life / p.death : p.life / p.death;
-                    this.ctx.fillStyle = this.ctx.strokeStyle = this.o.color;
+                    this.ctx.fillStyle = this.ctx.strokeStyle = p.color;
                     this.ctx.beginPath();
                     
                     if ( this.o.type === 'circle' ) {
@@ -119,11 +119,13 @@
         addParticle: function (options) {
             var frames = this.o.duration * 60 / 1000;
             var speed = is.fnc(this.o.speed) ? this.o.speed() : this.o.speed;
+            var color = is.fnc(this.o.color) ? this.o.color() : this.o.color;            
             this.particles.push({
                 startX: options.x,
                 startY: options.y,
                 x: this.disintegrating ? 0 : speed * -frames,
                 y: 0,
+                color: color,
                 angle: rand(360),
                 counter: this.disintegrating ? 0 : frames,
                 increase: Math.PI * 2 / 100,
