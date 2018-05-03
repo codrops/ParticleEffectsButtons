@@ -58,7 +58,6 @@
             duration: 1400,
             speed: 1.5,
             oscillationCoefficient: 15,
-            direction: 'right'
         },
         {
             duration: 500,
