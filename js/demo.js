@@ -7,7 +7,10 @@
             easing: 'easeOutQuart',
             size: 6,
             particlesAmountCoefficient: 4,
-            oscillationCoefficient: 2
+            oscillationCoefficient: 2,
+            color: function() {
+                return Math.random() < 0.5 ? '#000000' : '#ffffff'; 
+            }
         },
         {
             type: 'rectangle',
