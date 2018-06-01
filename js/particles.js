@@ -51,8 +51,8 @@
             }
         },
         updateParticles: function () {
-            var p;
-            for (var i = 0; i < this.particles.length; i++) {
+            let p;
+            for (let i = 0; i < this.particles.length; i++) {
                 p = this.particles[i];
                 if (p.life > p.death) {
                     this.particles.splice(i, 1);
@@ -73,8 +73,8 @@
         },
         renderParticles: function () {
             this.ctx.clearRect(0, 0, this.width, this.height);
-            var p;
-            for (var i = 0; i < this.particles.length; i++) {
+            let p;
+            for (let i = 0; i < this.particles.length; i++) {
                 p = this.particles[i];
                 if (p.life < p.death) {
                     this.ctx.translate(p.startX, p.startY);
@@ -136,17 +136,17 @@
             });
         },
         addParticles: function (rect, progress) {
-            var progressDiff = this.disintegrating ? progress - this.lastProgress : this.lastProgress - progress;
+            const progressDiff = this.disintegrating ? progress - this.lastProgress : this.lastProgress - progress;
             this.lastProgress = progress;
-            var x = this.options.canvasPadding;
-            var y = this.options.canvasPadding;
-            var progressValue = (this.isHorizontal() ? rect.width : rect.height) * progress + progressDiff * (this.disintegrating ? 100 : 220);
+            let x = this.options.canvasPadding;
+            let y = this.options.canvasPadding;
+            const progressValue = (this.isHorizontal() ? rect.width : rect.height) * progress + progressDiff * (this.disintegrating ? 100 : 220);
             if (this.isHorizontal()) {
                 x += this.o.direction === 'left' ? progressValue : rect.width - progressValue;
             } else {
                 y += this.o.direction === 'top' ? progressValue : rect.height - progressValue;
             }
-            var i = Math.floor(this.o.particlesAmountCoefficient * (progressDiff * 100 + 1));
+            let i = Math.floor(this.o.particlesAmountCoefficient * (progressDiff * 100 + 1));
             if (i > 0) {
                 while (i--) {
                     this.addParticle({
@@ -161,8 +161,8 @@
             }
         },
         addTransforms: function (value) {
-            var translateProperty = this.isHorizontal() ? 'translateX' : 'translateY';
-            var translateValue = this.o.direction === 'left' || this.o.direction === 'top' ? value : -value;
+            const translateProperty = this.isHorizontal() ? 'translateX' : 'translateY';
+            let translateValue = this.o.direction === 'left' || this.o.direction === 'top' ? value : -value;
             this.wrapper.style[transformString] = translateProperty + '('+ translateValue +'%)';
             this.el.style[transformString] = translateProperty + '('+ -translateValue +'%)';
         },
@@ -171,9 +171,9 @@
                 this.disintegrating = true;
                 this.lastProgress = 0;
                 this.setup(options);
-                var _ = this;
+                const _ = this;
                 this.animate(function(anim) {
-                    var value = anim.animatables[0].target.value;
+                    const value = anim.animatables[0].target.value;
                     _.addTransforms(value);
                     if (_.o.duration) {
                         _.addParticles(_.rect, value / 100, true);
@@ -186,9 +186,9 @@
                 this.disintegrating = false;
                 this.lastProgress = 1;
                 this.setup(options);
-                var _ = this;
+                const _ = this;
                 this.animate(function(anim) {
-                    var value = anim.animatables[0].target.value;
+                    const value = anim.animatables[0].target.value;
                     setTimeout(function() {
                         _.addTransforms(value);
                     }, _.o.duration);
@@ -208,7 +208,7 @@
             }
         },
         animate: function (update) {
-            var _ = this;
+            const _ = this;
             anime({
                 targets: {value: _.disintegrating ? 0 : 100},
                 value: _.disintegrating ? 100 : 0,
@@ -234,7 +234,7 @@
 
     // Utils
 
-    var is = {
+    let is = {
         arr: function (a) { return Array.isArray(a); },
         str: function (a) { return typeof a === 'string'; },
         fnc: function (a) { return typeof a === 'function'; }
@@ -250,18 +250,18 @@
         }
     }
 
-    var t = 'transform';
-    var transformString = (getCSSValue(document.body, t) ? t : '-webkit-' + t);
+    const t = 'transform';
+    const transformString = (getCSSValue(document.body, t) ? t : '-webkit-' + t);
 
     function extendSingle(target, source) {
-        for (var key in source)
+        for (let key in source)
             target[key] = is.arr(source[key]) ? source[key].slice(0) : source[key];
         return target;
     }
 
     function extend(target) {
         if (!target) target = {};
-        for (var i = 1; i < arguments.length; i++)
+        for (let i = 1; i < arguments.length; i++)
             extendSingle(target, arguments[i]);
         return target;
     }
