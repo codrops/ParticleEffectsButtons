@@ -59,6 +59,11 @@ For customization, you can pass `options` to `Particles` constructor. That `opti
 
 A React port of the `Particles` library, as well as related documentation can be found in the following repository [react-particle-effect-button](https://github.com/transitive-bullshit/react-particle-effect-button), by Travis Fischer.
 
+## Angular Version
+
+As well as the React port, there is an Angular version of the `Particles` library.
+It can be found in the following repository [angular-particle-effect-button](https://github.com/danielpdev/angular-particle-effect-button), by Daniel Popa.
+
 ## License
 
 This resource can be used freely if integrated or build upon in personal or commercial projects such as websites, web apps and web templates intended for sale. It is not allowed to take the resource "as-is" and sell it, redistribute, re-publish it, or sell "pluginized" versions of it. Free plugins built using this resource should have a visible mention and link to the original work. Always consider the licenses of all included libraries, scripts and images used.
