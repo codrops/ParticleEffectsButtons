@@ -210,8 +210,8 @@
         animate: function (update) {
             var _ = this;
             anime({
-                targets: {value: _.disintegrating ? 0 : 100},
-                value: _.disintegrating ? 100 : 0,
+                targets: {value: _.disintegrating ? 0 : 101},
+                value: _.disintegrating ? 101 : 0,
                 duration: _.o.duration,
                 easing: _.o.easing,
                 begin: _.o.begin,

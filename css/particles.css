@@ -14,7 +14,8 @@
 .particles-wrapper {
 	position: relative;
 	display: inline-block;
-    overflow: hidden;
+	overflow: hidden;
+	will-change: transform;
 }
 
 .particles-button {
@@ -34,6 +35,7 @@
 	margin: 0;
 	padding: 1.5rem 3rem;
 	padding: var(--button-padding);
+	will-change: transform;
 }
 
 .particles-button:focus {
