@@ -167,6 +167,7 @@
             this.el.style[transformString] = translateProperty + '('+ -translateValue +'%)';
         },
         disintegrate: function (options) {
+            options = options || {}
             if (!this.isAnimating()) {
                 this.disintegrating = true;
                 this.lastProgress = 0;
@@ -178,10 +179,11 @@
                     if (_.o.duration) {
                         _.addParticles(_.rect, value / 100, true);
                     }
-                });
+                }, options.callback);
             }
         },
         integrate: function (options) {
+            options = options || {}
             if (!this.isAnimating()) {
                 this.disintegrating = false;
                 this.lastProgress = 1;
@@ -195,7 +197,7 @@
                     if (_.o.duration) {
                         _.addParticles(_.rect, value / 100, true);
                     }
-                });
+                }, options.callback);
             }
         },
         setup: function (options) {
@@ -207,7 +209,7 @@
                 this.height = this.canvas.height = this.o.height || this.rect.height + this.o.canvasPadding * 2;
             }
         },
-        animate: function (update) {
+        animate: function (update, callback) {
             var _ = this;
             anime({
                 targets: {value: _.disintegrating ? 0 : 101},
@@ -219,6 +221,9 @@
                 complete: function() {
                     if (_.disintegrating) {
                         _.wrapper.style.visibility = 'hidden';
+                    }
+                    if (callback) {
+                        callback()
                     }
                 }
             });
