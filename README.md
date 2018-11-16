@@ -14,7 +14,7 @@ Bursting particles effects for buttons. By Luis Manuel.
 
 ## Basic usage
 
-The `Particles` library depends on [anime.js](http://animejs.com/) to perform animations, so you need to include it before `Particles`.
+The `Particles` library depends on [anime.js](http://animejs.com/) to perform animations, so you need to include it before `Particles`. Also, please make sure to include all the `scripts` at the end of the `body` element.
 
 Then you can start disintegrating/integrating things like:
 
