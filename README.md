@@ -55,19 +55,13 @@ For customization, you can pass `options` to `Particles` constructor. That `opti
 |`begin`                       | `Function`              | `undefined`                | Execute a function at the beginning of the animation. |
 |`complete`                    | `Function`              | `undefined`                | Execute a function at the end of the animation. |
 
-## React Version
+## Wrapper for popular Javascript frameworks
 
-A React port of the `Particles` library, as well as related documentation can be found in the following repository [react-particle-effect-button](https://github.com/transitive-bullshit/react-particle-effect-button), by Travis Fischer.
+Thanks to amazing contributors, the library can be used easily in the following popular Javascript frameworks:
 
-## Angular Version
-
-As well as the React port, there is an Angular version of the `Particles` library.
-It can be found in the following repository [angular-particle-effect-button](https://github.com/danielpdev/angular-particle-effect-button), by Daniel Popa.
-
-## Vue Version
-
-As well as the React/Angular port, there is an Vue version of the `Particles` library.
-It can be found in the following repository [vue-particle-effect-buttons](https://github.com/dreambo8563/vue-particle-effect-buttons), by Vincent Guo.
+- **React**: [react-particle-effect-button](https://github.com/transitive-bullshit/react-particle-effect-button), by Travis Fischer.
+- **Angular**: [angular-particle-effect-button](https://github.com/danielpdev/angular-particle-effect-button), by Daniel Popa.
+- **Vue**: [vue-particle-effect-buttons](https://github.com/dreambo8563/vue-particle-effect-buttons), by Vincent Guo.
 
 ## License
 
